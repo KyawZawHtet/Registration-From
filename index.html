@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Registration Form</title>
+  </head>
+  <body>
+    <section>
+      <div class="container my-3 py-3">
+        <h2 class="text-center text-light text-uppercase mb-3 fs-3 fw-semibold">
+          Registration Form
+        </h2>
+        <div class="row">
+          <div class="col-12 col-md-6 col-sm-8 m-auto">
+            <div class="card border-0 shadow px-3 py-3">
+              <div class="card-body">
+                <form id="form">
+                  <div>
+                    <label for="name">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      class="form-control mb-2 py-2"
+                    />
+                    <span id="nameError" class="text-danger"></span>
+                  </div>
+                  <div>
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      class="form-control mb-2 py-2"
+                    />
+                    <span id="emailError" class="text-danger"></span>
+                  </div>
+                  <div>
+                    <label for="password">Password</label>
+                    <input
+                      type="password"
+                      id="password"
+                      class="form-control mb-2 py-2"
+                      onblur="validatePassword()"
+                    />
+                    <span id="passwordError" class="text-danger"></span>
+                  </div>
+                  <div>
+                    <label for="confirm-password">Confirm Password</label>
+                    <input
+                      type="password"
+                      id="confirm-password"
+                      class="form-control mb-2 py-2"
+                      onblur="validateConfirmPassword()"
+                    />
+                    <span id="confirmPasswordError" class="text-danger"></span>
+                    <span id="message" class="text-danger"></span>
+                  </div>
+                  <div>
+                    <label for="class">Class</label>
+                    <select
+                      id="class"
+                      class="form-select mb-2 py-2"
+                      aria-label="Default select example"
+                    >
+                      <option>Select Class</option>
+                      <option value="pfc">PFC</option>
+                      <option value="jwd">JWD</option>
+                      <option value="ojt">OJT</option>
+                    </select>
+                    <span id="classError" class="text-danger"></span>
+                  </div>
+                  <div>
+                    <div>
+                      <label for="gender">Gender</label>
+                    </div>
+                    <div class="form-check mt-2 form-check-inline">
+                      <input
+                        checked
+                        class="form-check-input"
+                        type="radio"
+                        name="gender"
+                        id="male"
+                        name="choices"
+                      />
+                      <label class="form-check-label" for="male"> Male </label>
+                    </div>
+                    <div class="form-check mb-2 form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="gender"
+                        id="female"
+                        name="choices"
+                      />
+                      <label class="form-check-label" for="female">
+                        Female
+                      </label>
+                    </div>
+                    <span id="genderError" class="text-danger"></span>
+                  </div>
+                  <div>
+                    <div>
+                      <label for="hobbies">Hobbies</label>
+                    </div>
+                    <div class="form-check mt-2 form-check-inline">
+                      <input
+                        checked
+                        class="form-check-input"
+                        type="checkbox"
+                        id="reading"
+                      />
+                      <label class="form-check-label" for="reading">
+                        Reading
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="swimming"
+                      />
+                      <label class="form-check-label" for="swimming">
+                        Swimming
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="singing"
+                      />
+                      <label class="form-check-label" for="singing">
+                        Singing
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="coding"
+                      />
+                      <label class="form-check-label" for="coding">
+                        Coding
+                      </label>
+                    </div>
+                    <span id="hobbiesError" class="text-danger d-block"></span>
+                  </div>
+                  <div class="mt-3">
+                    <button type="submit" class="btn btn-primary px-5 me-2">
+                      Submit
+                    </button>
+                    <button type="reset" class="btn btn-danger px-5">
+                      Clear
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
